@@ -31,11 +31,11 @@ if "run_regression" not in st.session_state:
 
 
 def main():
-    st.title("Regression Analysis App")
+    st.title("Agentic AI Sprint Analysis Tool")
     analysis_page()
 
 def analysis_page():
-    st.header("Agentic AI Sprint Analysis Tool", divider=True)
+    st.header("", divider=True)
     st.write("This project is a part of the course EPGDPMAI at IIM Indore.")
     st.subheader("Team Members:", divider=True)
     st.write("- Pankaj Pawar (EPGDPMAI/B3/2024/13)")
