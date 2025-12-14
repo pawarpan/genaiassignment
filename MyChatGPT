@@ -1,0 +1,32 @@
+
+
+def chat_with_gpt(api_key ,df , input_text):
+    import openai
+    print("Welcome to ChatGPT CLI (type 'exit' to quit)")
+    openai.api_key=api_key
+    
+    conversation = []
+    
+    print("Inside Chatp GPT")
+    user_input = input_text
+
+    # Convert the dataframe to a string (e.g., CSV format) to pass as context
+    df_string = df.to_csv(index=False)
+
+    # Add the dataframe as a system message to provide context to ChatGPT
+    conversation.append({
+        "role": "system",
+        "content": f"The following is the data you should use for answering questions:\n{df_string}"
+    })
+    conversation.append({"role": "user", "content": user_input})
+    try:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",  # Or use "gpt-3.5-turbo" if you want a cheaper option
+                messages=conversation
+            )
+            reply = response.choices[0].message['content'].strip()
+            conversation.append({"role": "assistant", "content": reply})
+            print("ChatGPT:", reply)
+            return reply
+    except Exception as e:
+            print("Error:", e)
