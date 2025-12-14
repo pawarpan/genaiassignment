@@ -39,7 +39,7 @@ def analysis_page():
     st.write("This project is a part of the course EPGDPMAI at IIM Indore.")
     st.subheader("Team Members:", divider=True)
     st.write("- Pankaj Pawar (EPGDPMAI/B3/2024/13)")
-    st.write("- Saranjit Singh (EPGDPMAI/B3/2024/13)")
+    st.write("- Sarandeep Singh (EPGDPMAI/B3/2024/19)")
     st.subheader("", divider=True)
     st.write("Please upload your dataset in CSV,txt or xlsx format.")
 
